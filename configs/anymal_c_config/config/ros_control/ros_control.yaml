@@ -3,32 +3,71 @@
       type: joint_state_controller/JointStateController
       publish_rate: 30
 
+  # Position controller
   joint_group_position_controller:
-      type: effort_controllers/JointTrajectoryController
-      joints:
-          - LF_HAA
-          - LF_HFE
-          - LF_KFE
-          - RF_HAA
-          - RF_HFE
-          - RF_KFE
-          - LH_HAA
-          - LH_HFE
-          - LH_KFE
-          - RH_HAA
-          - RH_HFE
-          - RH_KFE
+    type: effort_controllers/JointTrajectoryController
+    joints:
+      - LF_HAA
+      - LF_HFE
+      - LF_KFE
+      - RF_HAA
+      - RF_HFE
+      - RF_KFE
+      - LH_HAA
+      - LH_HFE
+      - LH_KFE
+      - RH_HAA
+      - RH_HFE
+      - RH_KFE
 
-      gains:
-        LF_HAA : {p: 500, i: 1, d: 30}
-        LF_HFE : {p: 500, i: 1, d: 30}
-        LF_KFE : {p: 500, i: 1, d: 30}
-        RF_HAA : {p: 500, i: 1, d: 30}
-        RF_HFE : {p: 500, i: 1, d: 30}
-        RF_KFE : {p: 500, i: 1, d: 30}
-        LH_HAA : {p: 500, i: 1, d: 30}
-        LH_HFE : {p: 500, i: 1, d: 30}
-        LH_KFE : {p: 500, i: 1, d: 30}
-        RH_HAA : {p: 500, i: 1, d: 30}
-        RH_HFE : {p: 500, i: 1, d: 30}
-        RH_KFE : {p: 500, i: 1, d: 30}
+    gains:
+      LF_HAA : {p: 500, i: 1, d: 30}
+      LF_HFE : {p: 500, i: 1, d: 30}
+      LF_KFE : {p: 500, i: 1, d: 30}
+      RF_HAA : {p: 500, i: 1, d: 30}
+      RF_HFE : {p: 500, i: 1, d: 30}
+      RF_KFE : {p: 500, i: 1, d: 30}
+      LH_HAA : {p: 500, i: 1, d: 30}
+      LH_HFE : {p: 500, i: 1, d: 30}
+      LH_KFE : {p: 500, i: 1, d: 30}
+      RH_HAA : {p: 500, i: 1, d: 30}
+      RH_HFE : {p: 500, i: 1, d: 30}
+      RH_KFE : {p: 500, i: 1, d: 30}
+
+  # Effort controller
+  joint_LF_HAA_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: LF_HAA
+  joint_LF_HFE_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: LF_HFE
+  joint_LF_KFE_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: LF_KFE
+  joint_RF_HAA_effort_controller: 
+    type: effort_controllers/JointEffortController
+    joint: RF_HAA
+  joint_RF_HFE_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: RF_HFE
+  joint_RF_KFE_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: RF_KFE
+  joint_LH_HAA_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: LH_HAA
+  joint_LH_HFE_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: LH_HFE
+  joint_LH_KFE_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: LH_KFE
+  joint_RH_HAA_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: RH_HAA
+  joint_RH_HFE_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: RH_HFE
+  joint_RH_KFE_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: RH_KFE
