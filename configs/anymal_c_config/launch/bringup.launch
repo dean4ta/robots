@@ -10,6 +10,7 @@
     <arg name="rviz_ref_frame"         default="odom"/> <!-- Default RVIZ reference frame. -->
     <arg name="has_imu"                default="true" /> <!-- Set to true if you want to visualize robot but there's no IMU. Only useful for microcontrollers. -->
     <arg name="lite"                   default="false" /> <!-- Set to true if you're using CHAMP lite version. Only useful for microcontrollers. -->
+    <arg name="champ_control"          default="false" />
     <arg name="close_loop_odom"        default="false" /> <!-- Set to true if you want to calculate odometry using close loop. This is auto-set to true from gazebo.launch. -->
     <arg name="publish_foot_contacts"  default="true" /> <!-- Set to true if you want the controller to publish the foot contact states. This is auto-set to false from gazebo.launch. -->
     <arg name="publish_joint_control"  default="true" /> <!-- Set to true if you want the controller to publish the joint_states topic. This is auto-set to false from gazebo.launch. -->
@@ -30,6 +31,7 @@
         <arg name="has_imu"                value="$(arg has_imu)"/>
         <arg name="gazebo"                 value="$(arg gazebo)"/>
         <arg name="lite"                   value="$(arg lite)"/>
+        <arg name="champ_control"          value="$(arg champ_control)"/>
         <arg name="laser"                  value="$(arg laser)"/>
         <arg name="rviz"                   value="$(arg rviz)"/>
         <arg name="rviz_ref_frame"         value="$(arg frame_prefix)$(arg rviz_ref_frame)"/>
