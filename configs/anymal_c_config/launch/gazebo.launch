@@ -3,6 +3,7 @@
     <arg name="rviz"               default="false"/> <!-- Set to true to run rviz in parallel. -->
     <arg name="lite"               default="false" />  <!-- Set to true if you're using CHAMP lite version. Only useful for microcontrollers. -->
     <arg name="champ_control"      default="false" />
+    <arg name="effort_control"     default="false" />
     <arg name="ros_control_file"   default="$(find anymal_c_config)/config/ros_control/ros_control.yaml" /> <!-- Path to ROS Control configurations. Do not touch. -->
     <arg name="gazebo_world"       default="$(find anymal_c_config)/worlds/default.world" /> <!-- Path to Gazebo world you want to load. -->
     <arg name="gui"                default="true"/>
@@ -11,6 +12,7 @@
     <arg name="world_init_heading" default="0.0" /> <!-- Initial heading of the robot in Gazebo World -->
 
     <param name="use_sim_time" value="true" />
+    <param name="use_effort" value="$(arg effort_control)" />
 
     <include file="$(find anymal_c_config)/launch/bringup.launch">
         <arg name="robot_name"             value="$(arg robot_name)"/>
@@ -27,7 +29,7 @@
     <include file="$(find champ_gazebo)/launch/gazebo.launch">
         <arg name="robot_name"         value="$(arg robot_name)"/>
         <arg name="lite"               value="$(arg lite)"/>
-        <arg name="champ_control"      value="$(arg champ_control)"/>
+        <arg name="effort_control"     value="$(arg effort_control)"/>
         <arg name="ros_control_file"   value="$(arg ros_control_file)"/>
         <arg name="gazebo_world"       value="$(arg gazebo_world)"/>
         <arg name="world_init_x"       value="$(arg world_init_x)" />
